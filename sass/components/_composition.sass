@@ -1,0 +1,48 @@
+.composition
+    position: relative
+
+    &__photo
+        width: 60%
+        box-shadow: 0 1.5rem 4rem rgba($black, .4)
+        position: absolute
+        transition: all .2s
+        outline-offset: 1.5rem
+
+        @include respond(tab-port)
+            float: left
+            position: relative  
+            width: 33.333333333%
+            box-shadow: 0 1.5rem 3rem rgba($black, .2)
+
+        &--p1
+            top: -2rem
+            left: 0
+
+            @include respond(tab-port)
+                top: 0
+
+        &--p2
+            top: 2rem
+            right: 0
+
+            @include respond(tab-port)
+                top: 0
+                transform: scale(1.4)
+                z-index: 100
+        
+        &--p3
+            top: 10rem
+            left: 20%
+
+            @include respond(tab-port)
+                top: 1rem
+                left: 0
+
+        &:hover
+            outline: 1rem solid $color-primary
+            transform: scale(1.2) translateY(-.5rem)
+            box-shadow: 0 2.5rem 4rem rgba($black, .5)
+            z-index: 20
+
+    &:hover &__photo:not(:hover) 
+        transform: scale(.95)

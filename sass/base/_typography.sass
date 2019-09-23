@@ -1,0 +1,71 @@
+body 
+    font-family: 'Raleway', sans-serif
+    // font-family: 'Lato', sans-serif
+    font-weight: 400
+    line-height: 1.7   
+    color: $grey-dark
+    
+.heading-primary 
+    color: $white
+    margin-bottom: 4rem
+
+    &--main 
+        display: block
+        text-transform: uppercase
+        font-size: 5rem
+        font-weight: 600
+        letter-spacing: 2.9rem
+        transform: translateX(1.1rem)
+
+        /* animation */
+        animation: moveInLeft 1.2s ease-out
+        
+        @include respond(phone)
+            letter-spacing: 1.5rem
+            font-size: 5rem
+
+    &--sub 
+        display: block
+        font-size: 2rem 
+        font-weight: 500
+        letter-spacing: 1.4rem
+
+        /* animation */
+        animation: moveInRight 1.2s ease-out
+
+        @include respond(phone)
+            letter-spacing: .5rem
+
+.heading-secondary
+    display: inline-block
+    font-size: 3.5rem
+    font-weight: 600
+    color: $color-primary 
+    letter-spacing: .2rem;
+    transition: all .2s
+
+    @supports (background-clip: text) or (-webkit-background-clip: text)
+        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark)
+        -webkit-background-clip: text
+        background-clip: text
+        color: transparent
+
+    @include respond(tab-port)
+        font-size: 3rem
+    
+    @include respond(phone)
+        font-size: 2.5rem
+
+    &:hover
+        transform: skewY(4deg) skewX(4deg) scale(1.1)
+        text-shadow: .5rem 1rem 2rem rgba($black, .2)
+
+.heading-tertiary
+    font-size: $default-font-size
+    font-weight: 600
+
+.paragraph
+    font-size: $default-font-size
+
+    &:not(:last-child)
+        margin-bottom: 3rem;
